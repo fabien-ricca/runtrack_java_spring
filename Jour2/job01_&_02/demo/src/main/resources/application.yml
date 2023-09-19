@@ -1,0 +1,33 @@
+server:
+  port: 8080
+greeting:
+  message: "Je m'appelle Padawan"
+
+
+# Configuration du profil par défaut
+spring:
+  profiles:
+    default: dev
+
+
+# Profil 'Prod'
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+name: prod
+greeting:
+  message.salutation: "Monsieur de la production, Salutations."
+
+
+# Profil 'Dev'
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+name: dev
+greeting:
+  message.salutation: "Bonjour jeune développeur dynamique !"
+
