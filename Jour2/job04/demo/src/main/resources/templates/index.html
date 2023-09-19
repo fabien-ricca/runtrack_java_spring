@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Je suis l'index</h1>
+    <p th:text="${ @viewController.messageIndex }"></p>
+
+    <form action="/index" method="post">
+        <label for="name">Votre nom :</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Envoyer</button>
+    </form>
+
+<p th:if="${ @viewController.messageForm }" th:text="${ @viewController.messageForm }"></p>
+
+
+</body>
+</html>
