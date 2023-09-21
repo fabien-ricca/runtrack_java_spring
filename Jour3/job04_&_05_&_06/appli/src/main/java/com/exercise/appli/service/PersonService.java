@@ -5,12 +5,18 @@ import com.exercise.appli.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public abstract class PersonService implements PersonRepository {
+public class PersonService {
     @Autowired
     private PersonRepository personRepository;
 
-    public PersonModel savePerson(PersonModel personModel){
-        return (PersonModel) personRepository.save(personModel);
+    public void savePerson(PersonModel personModel){
+        personRepository.save(personModel);
+    }
+
+    public List<PersonModel> getAll(){
+        return personRepository.findAll();
     }
 }

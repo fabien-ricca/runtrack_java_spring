@@ -14,8 +14,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td ></td>
+      <tr th:if="${ @viewController.listUsers }" th:each="user : ${ @viewController.listUsers }">
+        <td th:text="${ user.id }"></td>
+        <td th:text="${ user.name }"></td>
+        <td th:text="${ user.age }"></td>
       </tr>
     </tbody>
   </table>
