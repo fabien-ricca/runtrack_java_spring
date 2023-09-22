@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GetAll</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Age</th>
+        <th>Mot de Passe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:if="${ @viewController.listUsers }" th:each="user : ${ @viewController.listUsers }">
+        <td th:text="${ user.id }"></td>
+        <td th:text="${ user.name }"></td>
+        <td th:text="${ user.age }"></td>
+        <td th:text="${ user.mdp}"></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
