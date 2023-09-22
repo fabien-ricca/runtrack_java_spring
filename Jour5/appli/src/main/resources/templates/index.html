@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Bienvenue</h1>
+
+    <form action="/index" method="post" th:object="${ userModel }" >
+        <label for="name">Votre nom :</label>
+        <input type="text" id="name" name="name" th:value="*{name}">
+
+        <label for="age">Votre age :</label>
+        <input type="text" id="age" name="age" th:value="*{age}">
+
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <table th:if="${ @indexController.usersList }">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${ @indexController.usersList }">
+                <td th:text="${ user.getId() }"></td>
+                <td th:text="${ user.getName() }"></td>
+                <td th:text="${ user.getAge() }"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

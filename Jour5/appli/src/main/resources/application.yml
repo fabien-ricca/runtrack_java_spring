@@ -1,0 +1,11 @@
+# Base de Données H2
+spring:
+  datasource:
+    url: jdbc:h2:mem:BDD
+    driverClassName: org.h2.Driver
+    username: fab
+    password:
+  h2:
+    console:
+      enabled: true
+
